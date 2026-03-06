@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Checkout</title>
+   <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+    <link rel="stylesheet" href="Style.css">
+</head>
+<body class="bg-checkout">
+<header id="navbar" class="fixed top-0 w-full z-50 backdrop-blur-md bg-white/80 border-b border-gray-200 transition-all duration-300">
+  <nav class="max-w-7xl mx-auto px-6 py-4 flex items-center justify-between">
+
+    <!-- LOGO -->
+    <div class="flex items-center gap-2">
+      <img src="images/Logo.png" class="h-9 w-9">
+      <span class="font-bold text-xl text-gray-800">FeedMill</span>
+    </div>
+
+    <!-- DESKTOP MENU -->
+    <div class="hidden lg:flex items-center gap-8">
+      <a href="index.html" class="nav-link">Home</a>
+      <a href="menu.html" class="nav-link">Menu</a>
+      <a href="checkout.html" class="nav-link">Checkout</a>
+      <a href="about.html" class="nav-link">About</a>
+
+      <!-- Cart icon -->
+      <a href="checkout.html" class="relative">
+        🛒
+        <span id="cartCount" class="absolute -top-2 -right-2 bg-red-500 text-white text-xs px-1 rounded-full">
+          0
+        </span>
+      </a>
+
+      <a href="login.html" class="bg-red-500 text-white px-4 py-2 rounded-lg hover:bg-red-600 transition">
+        Login
+      </a>
+    </div>
+
+    <button id="burgerBtn" class="lg:hidden flex flex-col gap-1">
+      <span class="bar"></span>
+      <span class="bar"></span>
+      <span class="bar"></span>
+    </button>
+  </nav>
+
+  <!-- OVERLAY -->
+  <div id="overlay" class="fixed inset-0 bg-black/30 backdrop-blur-sm hidden"></div>
+
+  <!-- MOBILE SIDEBAR -->
+  <div id="mobileMenu" class="fixed top-0 right-0 h-full w-64 bg-white shadow-xl transform translate-x-full transition duration-300">
+    <div class="flex justify-between items-center p-6 border-b">
+      <span class="font-bold text-gray-800">Menu</span>
+      <button id="closeBtn" class="text-2xl">✕</button>
+    </div>
+
+    <div class="flex flex-col gap-6 p-6 bg-black text-white">
+      <a class="hover:bg-gray-500 px-5 py-2" href="index.html">Home</a>
+      <a class="hover:bg-gray-500 px-5 py-2" href="menu.html">Menu</a>
+      <a class="hover:bg-gray-500 px-5 py-2" href="checkout.html">Checkout</a>
+      <a class="hover:bg-gray-500 px-5 py-2" href="about.html">About</a>
+      <a href="login.html" class="bg-red-600 text-white text-center py-2 hover:bg-red-500 rounded-full">Login</a>
+    </div>
+  </div>
+</header>
+
+
+<header class="bg-white shadow-md py-4 px-6">
+  <h1 class="text-xl font-bold">FeedMill Checkout</h1>
+</header>
+
+<main class="max-w-4xl mx-auto p-6">
+
+  <h2 class="text-2xl font-bold mb-6">Your Order</h2>
+
+  <!-- CART ITEMS -->
+  <div id="checkoutItems" class="space-y-4"></div>
+
+  <!-- TOTAL BOX -->
+  <div class="bg-white p-6 rounded-xl shadow-md mt-6">
+    <div class="flex justify-between text-xl font-bold">
+      <span>Total</span>
+      <span>₦<span id="totalAmount">0</span></span>
+    </div>
+
+    <!-- BUTTONS -->
+    <div class="flex gap-3 mt-6">
+      <button onclick="clearCart()"
+        class="flex-1 bg-gray-400 hover:bg-gray-500 text-white px-4 py-3 rounded-full transition">
+        Clear Cart
+      </button>
+
+      <button onclick="placeOrder()"
+        class="flex-1 bg-red-600 hover:bg-red-700 text-white px-6 py-3 rounded-full transition font-semibold">
+        Place Order
+      </button>
+    </div>
+  </div>
+</main>
+
+<div id="successToast"
+ class="fixed top-6 left-1/2 -translate-x-1/2 bg-green-600 text-white px-6 py-3 rounded-lg shadow-lg opacity-0 pointer-events-none transition duration-300 z-50">
+  Order placed successfully 🎉
+</div>
+
+<footer class="bg-gray-900 text-white text-center py-6 mt-16">
+  <p class="text-sm">© 2026 FeedMill Restaurant</p>
+  <div class="flex justify-center gap-6 mt-2 text-sm">
+    <a href="menu.html" class="hover:text-red-400">Menu</a>
+    <a href="about.html" class="hover:text-red-400">About</a>
+    <a href="checkout.html" class="hover:text-red-400">Checkout</a>
+  </div>
+</footer>
+
+<script src="app.js"></script>
+    
+</body>
+</html>

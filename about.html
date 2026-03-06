@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Checkout</title>
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+    <link rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+    <link rel="stylesheet" href="Style.css">
+</head>
+<body class="bg-about">
+<header id="navbar" class="fixed top-0 w-full z-50 backdrop-blur-md bg-white/80 border-b border-gray-200 transition-all duration-300">
+  <nav class="max-w-7xl mx-auto px-6 py-4 flex items-center justify-between">
+
+    <!-- LOGO -->
+    <div class="flex items-center gap-2">
+      <img src="images/Logo.png" class="h-9 w-9">
+      <span class="font-bold text-xl text-gray-800">FeedMill</span>
+    </div>
+
+    <!-- DESKTOP MENU -->
+    <div class="hidden lg:flex items-center gap-8">
+      <a href="index.html" class="nav-link">Home</a>
+      <a href="menu.html" class="nav-link">Menu</a>
+      <a href="checkout.html" class="nav-link">Checkout</a>
+      <a href="about.html" class="nav-link">About</a>
+
+      <!-- Cart icon -->
+      <a href="checkout.html" class="relative">
+        🛒
+        <span id="cartCount" class="absolute -top-2 -right-2 bg-red-500 text-white text-xs px-1 rounded-full">
+          0
+        </span>
+      </a>
+
+      <a href="login.html" class="bg-red-500 text-white px-4 py-2 rounded-lg hover:bg-red-600 transition">
+        Login
+      </a>
+    </div>
+
+    <button id="burgerBtn" class="lg:hidden flex flex-col gap-1">
+      <span class="bar"></span>
+      <span class="bar"></span>
+      <span class="bar"></span>
+    </button>
+  </nav>
+
+  <!-- OVERLAY -->
+  <div id="overlay" class="fixed inset-0 bg-black/30 backdrop-blur-sm hidden"></div>
+
+  <!-- MOBILE SIDEBAR -->
+  <div id="mobileMenu" class="fixed top-0 right-0 h-full w-64 bg-white shadow-xl transform translate-x-full transition duration-300">
+    <div class="flex justify-between items-center p-6 border-b">
+      <span class="font-bold text-gray-800">Menu</span>
+      <button id="closeBtn" class="text-2xl">✕</button>
+    </div>
+
+    <div class="flex flex-col gap-6 p-6 bg-black text-white">
+      <a class="hover:bg-gray-500 px-5 py-2" href="index.html">Home</a>
+      <a class="hover:bg-gray-500 px-5 py-2" href="menu.html">Menu</a>
+      <a class="hover:bg-gray-500 px-5 py-2" href="checkout.html">Checkout</a>
+      <a class="hover:bg-gray-500 px-5 py-2" href="about.html">About</a>
+      <a href="login.html" class="bg-red-600 text-white text-center py-2 hover:bg-red-500 rounded-full">Login</a>
+    </div>
+  </div>
+</header>
+
+   <main class="relative">
+
+  <!-- Cover / Hero -->
+  <section class="cover-img h-96 flex items-center justify-center text-center text-white">
+    <div class="bg-black/50 p-6 rounded-lg">
+      <h1 class="page-title about-reveal text-4xl md:text-5xl font-bold mb-2 animate-fade-in">About FeedMill Restaurant</h1>
+      <p class="about-text about-reveal text-lg md:text-xl animate-fade-in delay-200">
+        FeedMill Restaurant provides quality meals in a friendly environment.
+          We’re passionate about fresh ingredient, tasty dishes, and happy customers.
+      </p>
+    </div>
+  </section>
+
+  <section class="max-w-6xl mx-auto px-6 py-12">
+
+    <!-- Our Story -->
+    <div class="grid md:grid-cols-2 gap-10 text-white items-center reveal">
+      <img src="images/Bg2.PNG" alt="Restaurant Interior" class="rounded shadow-lg">
+      <div>
+        <h2 class="text-3xl font-bold mb-4">Our Story</h2>
+        <p class="text-gray-200 mb-4">
+          Founded in 2025, FeedMill Restaurant has served hundreds of happy customers.
+          We focus on fresh ingredients, tasty dishes, and a warm, welcoming environment.
+        </p>
+        <p class="text-gray-400">
+          Every dish is prepared with care, ensuring a memorable experience for every guest.
+        </p>
+      </div>
+    </div>
+
+    <!-- Meet the Team -->
+    <div class="mt-12 reveal">
+      <h2 class="text-3xl font-bold mb-6 text-center">Meet Our Team</h2>
+      <div class="grid sm:grid-cols-2 md:grid-cols-3 gap-6">
+        <div class="text-center group hover:scale-105 transition-transform duration-300">
+          <img src="images/chef2.jpg" alt="Chef Ade" class="rounded-full w-32 h-32 mx-auto mb-3 object-cover shadow-lg">
+          <h3 class="font-bold text-gray-200 group-hover:text-red-600 transition-colors">Chef Ade</h3>
+          <p class="text-gray-400 text-sm">Head Chef</p>
+        </div>
+        <div class="text-center group hover:scale-105 transition-transform duration-300">
+          <img src="images/chef3.jpg" alt="Chef Bola" class="rounded-full w-32 h-32 mx-auto mb-3 object-cover shadow-lg">
+          <h3 class="font-bold text-gray-200 group-hover:text-red-600 transition-colors">Chef Bola</h3>
+          <p class="text-gray-400 text-sm">Pastry Chef</p>
+        </div>
+        <div class="text-center group hover:scale-105 transition-transform duration-300">
+          <img src="images/chef4.jpg" alt="Chef Tunde" class="rounded-full w-32 h-32 mx-auto mb-3 object-cover shadow-lg">
+          <h3 class="font-bold text-gray-200 group-hover:text-red-600 transition-colors">Chef Tunde</h3>
+          <p class="text-gray-400 text-sm">Sous Chef</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- Call to Action -->
+    <div class="text-center mt-12 reveal">
+      <a href="menu.html" class="inline-block bg-red-600 hover:bg-red-700 text-white px-6 py-3 rounded-full transition">
+        Explore Our Menu
+      </a>
+    </div>
+
+  </section>
+</main>
+
+<footer class="bg-slate-900 text-gray-300">
+  <div class="max-w-7xl mx-auto px-6 py-16">
+
+    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-12">
+
+      <!-- Brand -->
+      <div>
+        <h2 class="text-2xl font-bold text-white mb-4">FeedMill</h2>
+        <p class="text-gray-400 leading-relaxed">
+          Delicious meals, fast delivery, and a smooth online ordering experience.
+        </p>
+      </div>
+
+      <!-- Navigation -->
+      <div>
+        <h3 class="text-white font-semibold mb-4">Navigation</h3>
+        <ul class="space-y-3">
+          <li><a href="index.html" class="hover:text-red-500 transition">Home</a></li>
+          <li><a href="menu.html" class="hover:text-red-500 transition">Menu</a></li>
+          <li><a href="checkout.html" class="hover:text-red-500 transition">Checkout</a></li>
+          <li><a href="about.html" class="hover:text-red-500 transition">About</a></li>
+        </ul>
+      </div>
+
+      <!-- Account -->
+      <div>
+        <h3 class="text-white font-semibold mb-4">Account</h3>
+        <ul class="space-y-3">
+          <li><a href="login.html" class="hover:text-red-500 transition">Login</a></li>
+          <li><a href="login.html" class="hover:text-red-500 transition">Sign Up</a></li>
+          <li><a href="checkout.html" class="hover:text-red-500 transition">My Orders</a></li>
+          <li><a href="about.html" class="hover:text-red-500 transition">Help</a></li>
+        </ul>
+      </div>
+
+      <!-- Contact -->
+      <div>
+        <h3 class="text-white font-semibold mb-4">Contact</h3>
+        <p class="mb-2">📍 Lagos, Nigeria</p>
+        <p class="mb-2">📞 +234 8105170474</p>
+        <p class="mb-4">✉ feedmill@email.com</p>
+
+        
+        <!-- Social Icons -->
+        <div class="flex items-center gap-4 mt-4">
+          <a href="#" class="hover:text-red-500 text-lg transition">
+            <i class="fab fa-facebook-f"></i>
+          </a>
+          <a href="#" class="hover:text-red-500 text-lg transition">
+            <i class="fab fa-instagram"></i>
+          </a>
+          <a href="#" class="hover:text-red-500 text-lg transition">
+            <i class="fab fa-tiktok"></i>
+          </a>
+          <a href="#" class="hover:text-red-500 text-lg transition">
+            <i class="fab fa-linkedin-in"></i>
+          </a>
+          <a href="#" class="hover:text-red-500 text-lg transition">
+            <i class="fab fa-whatsapp"></i>
+          </a>
+        </div>
+
+        <a href="menu.html">
+          <button class="mt-5 bg-red-600 hover:bg-red-700 px-5 py-2 rounded-full transition">
+            Order Now
+          </button>
+        </a>
+      </div>
+      
+    </div>
+
+    <!-- Bottom -->
+    <div class="border-t border-gray-700 mt-12 pt-6 text-center text-sm text-gray-400">
+      © 2026 FeedMill. Built by Andy.
+    </div>
+
+  </div>
+</footer>
+
+<script src="app.js"></script>    
+</body>
+</html>
