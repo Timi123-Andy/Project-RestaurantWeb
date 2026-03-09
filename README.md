@@ -50,11 +50,7 @@ project
 
 🌐 Live Demo
 
-You can host the project using GitHub Pages.
-
-Example:
-
-https://Timi123-Andy.github.io/feedmill-restaurant
+https://timi123-andy.github.io/Project-RestaurantWeb/
 
 ---
 
